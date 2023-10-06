@@ -12,7 +12,12 @@
       <div class="todo-app">
         <h2>To-Do List</h2>
         <div class="row">
-          <input type="text" id="input-text" placeholder="Add your text" />
+          <input
+            type="text"
+            id="input-text"
+            placeholder="Add your text here..."
+            onkeypress="if (event.key === 'Enter') addTask()"
+          />
           <button onclick="addTask()">Add</button>
         </div>
         <ul id="list-container">

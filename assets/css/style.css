@@ -104,3 +104,20 @@ ul li span {
 ul li span:hover {
     background: #edeef0;
 }
+
+.editing {
+    background: #f0f0f0;
+    /* Anpassa bakgrundsfärgen när du redigerar */
+    border-radius: 10px;
+    /* Runda hörnen för att matcha stil */
+    padding-left: 20px;
+    /* Justera vänsterfyllning för att undvika textförskjutning */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    /* Lägg till en subtil skugga */
+    font-size: 17px;
+    /* Anpassa fontstorleken */
+    color: #333;
+    /* Anpassa textfärgen */
+    border: 2px solid #ddd;
+    /* Lägg till en båge runt redigeringsläget */
+}
