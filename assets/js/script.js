@@ -1,18 +1,33 @@
-const inputBox = document.getElementById("input-box");
-const listContainer = document.getElementById("list-container");
-
 function addTask() {
-    if (inputBox.value === '') {
-        alert("You must write something!");
+    var inputText = document.getElementById("input-text");
+
+    if (inputText === null) {
+        console.error("Element with ID 'input-text' not found.");
+        return;
     }
-    else {
-        let li = document.createElement("li");
-        li.innerHTML = inputBox.value;
-        listContainer.appendChild(li);
+
+    var textValue = inputText.value;
+
+    if (textValue === '') {
+        alert("You must write something!");
+    } else {
+        var listContainer = document.getElementById("list-container");
+        var listItem = document.createElement("li");
+        listItem.textContent = textValue;
+        listContainer.appendChild(listItem);
+        inputText.value = '';
         let span = document.createElement("span");
         span.innerHTML = "\u00d7";
         li.appendChild(span);
     }
-    inputBox.value = "";
+
 }
 
+listContainer.addEventListenser("click", function(e) {
+    if(e.target.tagName === "LI") {
+        e.target.classList.toggle("checked");
+    }
+    else if(e.target.tagName === "SPAN") {
+        e.target.parentElement.remove();
+    }
+}, false);
